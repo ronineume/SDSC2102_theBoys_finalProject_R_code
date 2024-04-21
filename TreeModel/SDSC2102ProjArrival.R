@@ -43,7 +43,7 @@ glimpse(df_train)
 
 glimpse(df_test)
 
-tree <- rpart(MV ~ MR + EW + RD, data = df_train)
+tree <- rpart(MV ~ MR + EW + RD + WD, data = df_train)
 prp(tree)
 rpart.plot(tree, type = 4, extra = 101, under = TRUE, cex = 0.8, box.palette = "auto")
 
