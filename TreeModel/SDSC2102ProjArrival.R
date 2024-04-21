@@ -3,7 +3,7 @@ library(tidymodels)
 library(rpart)
 library(rpart.plot)
 
-df <- read_csv('/Users/parkjongwan/Desktop/SDSC2102 Project/Arrivaldata.csv')
+df <- read_csv('Dataset/Arrivaldata.csv')
 
 colnames(df)
 
@@ -45,7 +45,7 @@ glimpse(df_test)
 
 tree <- rpart(MV ~ MR + EW + RD + WD, data = df_train)
 prp(tree)
-rpart.plot(tree, type = 4, extra = 101, under = TRUE, cex = 0.8, box.palette = "auto")
+rpart.plot(tree, extra = 101, under = TRUE, cex = 0.8, box.palette = "auto")
 
 tree_predictions <- predict(tree, df_test)
 y_test <- df_test %>% pull(MV)
