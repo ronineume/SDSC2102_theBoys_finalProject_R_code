@@ -50,5 +50,3 @@ rpart.plot(tree, extra = 100, under = FALSE, cex = 1, box.palette = "auto")
 tree_predictions <- predict(tree, df_test)
 y_test <- df_test %>% pull(HK)
 cor(tree_predictions, y_test)
-
-
